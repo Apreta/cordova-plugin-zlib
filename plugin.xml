@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.apreta.zlib"
+        version="0.1.0">
+
+  <name>Zlib</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/zlib.js" target="js/zlib.js"/>
+
+  <js-module src="www/zlib.js" name="zlib">
+    <clobbers target="zlib" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Zlib">
+        <param name="android-package" value="com.apreta.plugin.Zlib"/>
+      </feature>
+    </config-file>
+
+    <source-file src="build-extras.gradle" target-dir="../android" />
+    <source-file src="src/android/Zlib.java" target-dir="src/com/apreta/plugin/"/>
+  </platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Zlib">
+        <param name="ios-package" value="PZlib" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/PZlib.h" target-dir="ZlibPlugin"/>
+    <source-file src="src/ios/PZlib.m" target-dir="ZlibPlugin"/>
+    <framework src="libz.dylib" />
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Zlib.cs"/>
+  </platform>
+
+</plugin>
