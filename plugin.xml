@@ -9,9 +9,9 @@
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/zlib.js" target="js/zlib.js"/>
+  <asset src="www/zlib-plugin.js" target="js/zlib-plugin.js"/>
 
-  <js-module src="www/zlib.js" name="zlib">
+  <js-module src="www/zlib-plugin.js" name="zlib-plugin">
     <clobbers target="zlib" />
   </js-module>
 
